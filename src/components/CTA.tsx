@@ -1,66 +1,85 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { MapPin, Mail, Phone } from "lucide-react";
 
 export const CTA = () => {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-gradient-hero text-white">
       <div className="container mx-auto px-6">
-        <div className="relative rounded-3xl overflow-hidden">
-          {/* Gradient background */}
-          <div className="absolute inset-0 gradient-hero" />
+        <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
+          {/* Form Section */}
+          <div className="animate-in fade-in slide-in-from-left duration-700">
+            <h2 className="font-display text-4xl md:text-5xl mb-4">
+              Votre business <span className="text-accent">commence ici</span>
+            </h2>
+            <p className="text-xl text-white/90 mb-8">
+              Investissez dans un garage rentable — nous livrons, vous encaissez.
+            </p>
+            
+            <form className="space-y-4">
+              <Input 
+                placeholder="Nom"
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12"
+              />
+              <Input 
+                type="email"
+                placeholder="Email"
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12"
+              />
+              <Input 
+                type="tel"
+                placeholder="Téléphone"
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12"
+              />
+              <Input 
+                placeholder="Budget"
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12"
+              />
+              
+              <Button 
+                type="submit"
+                size="lg" 
+                className="w-full bg-accent hover:bg-accent/90 text-white font-semibold text-lg py-6 rounded-xl"
+              >
+                Recevoir l'offre
+              </Button>
+            </form>
+          </div>
           
-          {/* Decorative elements */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-accent/30 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
-          
-          {/* Content */}
-          <div className="relative z-10 px-8 py-16 md:px-16 md:py-24 text-center text-white">
-            <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom duration-700">
-              <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20 mb-4">
-                Opportunité limitée
-              </div>
+          {/* Contact Info */}
+          <div className="animate-in fade-in slide-in-from-right duration-700 delay-150">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+              <h3 className="font-bold text-2xl mb-6">Informations contact</h3>
               
-              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-tight">
-                Prêt à investir dans le marché le plus prometteur d'Afrique ?
-              </h2>
-              
-              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-                Rejoignez les investisseurs qui positionnent leur capital avant 
-                le boom de la Coupe du Monde 2030. Places limitées.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-                <Button 
-                  size="lg" 
-                  className="bg-accent hover:bg-accent/90 text-white font-semibold text-lg px-10 py-7 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
-                >
-                  Commencer mon investissement
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                    <div className="font-semibold mb-1">Adresse</div>
+                    <div className="text-white/80">Marrakech, Maroc</div>
+                  </div>
+                </div>
                 
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="bg-white text-primary hover:bg-white/90 border-none font-semibold text-lg px-10 py-7 rounded-xl shadow-xl transition-all duration-300 hover:scale-105"
-                >
-                  <Phone className="mr-2 h-5 w-5" />
-                  Parler à un expert
-                </Button>
-              </div>
-              
-              {/* Trust indicators */}
-              <div className="pt-12 flex flex-wrap justify-center gap-8 text-sm text-white/80">
-                <div className="flex items-center gap-2">
-                  <CheckIcon />
-                  <span>Sans engagement</span>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center flex-shrink-0">
+                    <Mail className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                    <div className="font-semibold mb-1">Email</div>
+                    <div className="text-white/80">commercial@myrentpro.com</div>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckIcon />
-                  <span>Consultation gratuite</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckIcon />
-                  <span>Réponse sous 24h</span>
+                
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center flex-shrink-0">
+                    <Phone className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                    <div className="font-semibold mb-1">Téléphone</div>
+                    <div className="text-white/80">+212 XXX XXX XXX</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -70,9 +89,3 @@ export const CTA = () => {
     </section>
   );
 };
-
-const CheckIcon = () => (
-  <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
-    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-  </svg>
-);
