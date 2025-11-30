@@ -8,43 +8,44 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 215 25% 15%;
+    --background: 215 35% 6%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card: 215 30% 10%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover: 215 30% 10%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 100% 45%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 15% 95%;
-    --secondary-foreground: 215 25% 15%;
+    --secondary: 215 20% 15%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 15% 96%;
-    --muted-foreground: 215 15% 45%;
+    --muted: 215 20% 18%;
+    --muted-foreground: 215 15% 65%;
 
-    --accent: 25 85% 55%;
+    --accent: 217 91% 60%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
-    --ring: 210 100% 45%;
+    --border: 215 20% 20%;
+    --input: 215 20% 20%;
+    --ring: 217 91% 60%;
 
     --radius: 0.75rem;
 
-    --gradient-hero: linear-gradient(135deg, hsl(210 100% 45%), hsl(200 95% 50%));
-    --gradient-accent: linear-gradient(135deg, hsl(25 85% 55%), hsl(35 90% 60%));
-    --gradient-subtle: linear-gradient(180deg, hsl(210 40% 98%), hsl(0 0% 100%));
+    --gradient-hero: linear-gradient(135deg, hsla(215, 35%, 6%, 0.95), hsla(215, 30%, 10%, 0.9));
+    --gradient-accent: linear-gradient(135deg, hsl(217 91% 60%), hsl(220 95% 65%));
+    --gradient-subtle: linear-gradient(180deg, hsl(215 30% 10%), hsl(215 35% 6%));
+    --gradient-overlay: linear-gradient(90deg, hsla(215, 35%, 6%, 0.98) 0%, hsla(215, 35%, 6%, 0.85) 50%, hsla(215, 35%, 6%, 0.6) 100%);
     
-    --shadow-sm: 0 2px 8px hsla(210, 50%, 20%, 0.08);
-    --shadow-md: 0 4px 20px hsla(210, 50%, 20%, 0.12);
-    --shadow-lg: 0 10px 40px hsla(210, 50%, 20%, 0.15);
+    --shadow-sm: 0 2px 8px hsla(0, 0%, 0%, 0.3);
+    --shadow-md: 0 4px 20px hsla(0, 0%, 0%, 0.4);
+    --shadow-lg: 0 10px 40px hsla(0, 0%, 0%, 0.5);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -59,25 +60,25 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 215 30% 8%;
-    --foreground: 210 20% 95%;
+    --background: 215 35% 6%;
+    --foreground: 0 0% 98%;
 
-    --card: 215 25% 12%;
-    --card-foreground: 210 20% 95%;
+    --card: 215 30% 10%;
+    --card-foreground: 0 0% 98%;
 
     --popover: 215 30% 10%;
-    --popover-foreground: 210 20% 95%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 100% 55%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 20% 18%;
-    --secondary-foreground: 210 20% 95%;
+    --secondary: 215 20% 15%;
+    --secondary-foreground: 0 0% 98%;
 
     --muted: 215 20% 18%;
     --muted-foreground: 215 15% 65%;
 
-    --accent: 25 85% 55%;
+    --accent: 217 91% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
@@ -85,11 +86,12 @@ All colors MUST be HSL.
 
     --border: 215 20% 20%;
     --input: 215 20% 20%;
-    --ring: 210 100% 55%;
+    --ring: 217 91% 60%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(210 90% 35%), hsl(200 85% 40%));
-    --gradient-accent: linear-gradient(135deg, hsl(25 85% 55%), hsl(35 90% 60%));
-    --gradient-subtle: linear-gradient(180deg, hsl(215 25% 12%), hsl(215 30% 8%));
+    --gradient-hero: linear-gradient(135deg, hsla(215, 35%, 6%, 0.95), hsla(215, 30%, 10%, 0.9));
+    --gradient-accent: linear-gradient(135deg, hsl(217 91% 60%), hsl(220 95% 65%));
+    --gradient-subtle: linear-gradient(180deg, hsl(215 30% 10%), hsl(215 35% 6%));
+    --gradient-overlay: linear-gradient(90deg, hsla(215, 35%, 6%, 0.98) 0%, hsla(215, 35%, 6%, 0.85) 50%, hsla(215, 35%, 6%, 0.6) 100%);
     
     --shadow-sm: 0 2px 8px hsla(0, 0%, 0%, 0.3);
     --shadow-md: 0 4px 20px hsla(0, 0%, 0%, 0.4);
@@ -133,6 +135,10 @@ All colors MUST be HSL.
   
   .gradient-subtle {
     background: var(--gradient-subtle);
+  }
+  
+  .gradient-overlay {
+    background: var(--gradient-overlay);
   }
   
   .text-balance {
