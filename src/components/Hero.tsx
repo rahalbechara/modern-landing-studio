@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
-import heroCars from "@/assets/hero-cars.png";
+import heroBackground from "@/assets/hero-background.png";
 
 export const Hero = () => {
   return (
@@ -8,9 +8,9 @@ export const Hero = () => {
       {/* Background car image */}
       <div className="absolute inset-0">
         <img 
-          src={heroCars} 
-          alt="Luxury cars background" 
-          className="w-full h-full object-cover opacity-40"
+          src={heroBackground} 
+          alt="Luxury cars fleet background" 
+          className="w-full h-full object-cover opacity-50"
         />
         <div className="absolute inset-0 gradient-overlay" />
       </div>
