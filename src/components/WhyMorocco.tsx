@@ -3,20 +3,29 @@ import { TrendingUp, Users, MapPin, Trophy } from "lucide-react";
 
 const stats = [
   {
-    value: "+14M",
-    label: "touristes par an",
-    sublabel: "objectif: +20M d'ici 2030",
+    icon: Users,
+    value: "+14M touristes par an",
+    explanation: "Marrakech + Casablanca = demande continue",
+    sublabel: "Hôtels, excursions, business, saison haute"
   },
   {
-    value: "+18%",
-    label: "croissance annuelle",
-    sublabel: "demande de location",
+    icon: TrendingUp,
+    value: "70% de taux de location moyen",
+    explanation: "Hôtels, excursions, business, saison haute",
+    sublabel: "Demande continue toute l'année"
   },
   {
-    value: "70%",
-    label: "taux de location",
-    sublabel: "Marrakech + Casablanca",
+    icon: TrendingUp,
+    value: "Croissance +18%/an",
+    explanation: "Demande supérieure à l'offre",
+    sublabel: "Marché en pleine expansion"
   },
+  {
+    icon: MapPin,
+    value: "Villes les plus rentables",
+    explanation: "Marrakech – Casablanca – Agadir – Rabat",
+    sublabel: "Taux d'occupation parmi les plus élevés"
+  }
 ];
 
 const worldCupFeatures = [
@@ -43,31 +52,42 @@ export const WhyMorocco = () => {
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-16 animate-in fade-in slide-in-from-bottom duration-700">
-          <div className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-semibold mb-6">
-            Opportunité unique
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-accent/10 text-accent rounded-full text-sm font-semibold mb-6">
+            <Trophy className="h-5 w-5" />
+            Le Maroc est l'un des marchés les plus profitables pour la location auto
           </div>
           <h2 className="font-display text-4xl md:text-5xl mb-6">
             Pourquoi investir au <span className="gradient-accent bg-clip-text text-transparent">Maroc</span> ?
           </h2>
-          <p className="text-xl text-muted-foreground leading-relaxed">
+          <p className="text-xl text-muted-foreground leading-relaxed mb-4">
             Le Maroc n'est pas seulement une destination touristique, c'est un marché en pleine 
-            accélération économique. Là où d'autres pays stagnent, le Maroc explose.
+            accélération économique.
+          </p>
+          <p className="text-2xl font-semibold text-foreground">
+            Là où d'autres pays stagnent, le Maroc explose.
+          </p>
+          <p className="text-lg text-muted-foreground mt-4">
+            Avec des villes comme Marrakech, Casablanca, Agadir et Tanger classées parmi les plus dynamiques d'Afrique, 
+            le pays attire chaque année des millions de visiteurs — et demain encore plus.
           </p>
         </div>
 
         {/* Stats */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {stats.map((stat, index) => (
             <Card 
               key={index}
-              className="p-8 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 animate-in fade-in slide-in-from-bottom duration-700"
+              className="p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 animate-in fade-in slide-in-from-bottom duration-700"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="text-5xl font-bold gradient-accent bg-clip-text text-transparent mb-3">
-                {stat.value}
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg gradient-accent flex items-center justify-center flex-shrink-0">
+                  <stat.icon className="h-5 w-5 text-white" />
+                </div>
+                <div className="font-bold text-lg leading-tight">{stat.value}</div>
               </div>
-              <div className="font-semibold text-lg mb-1">{stat.label}</div>
-              <div className="text-sm text-muted-foreground">{stat.sublabel}</div>
+              <div className="text-muted-foreground mb-2">{stat.explanation}</div>
+              <div className="text-sm text-muted-foreground/80">{stat.sublabel}</div>
             </Card>
           ))}
         </div>

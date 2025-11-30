@@ -1,30 +1,42 @@
 import { Card } from "@/components/ui/card";
-import { MessageSquare, FileCheck, Car, Key } from "lucide-react";
+import { MessageSquare, FileCheck, Car, Key, TrendingUp, Gauge } from "lucide-react";
 
 const steps = [
   {
     number: "01",
     icon: MessageSquare,
-    title: "Consultation gratuite",
-    description: "Échangez avec nos experts sur votre projet d'investissement et vos objectifs",
+    title: "Étude & validation",
+    description: "Analyse budget + proposition flotte",
   },
   {
     number: "02",
-    icon: FileCheck,
-    title: "Validation du projet",
-    description: "Nous étudions votre budget et définissons ensemble la composition de votre flotte",
+    icon: Car,
+    title: "Achat véhicules",
+    description: "Sélection + négociation + livraison",
   },
   {
     number: "03",
-    icon: Car,
-    title: "Création de la flotte",
-    description: "Nous achetons, immatriculons et assurons vos véhicules selon vos spécifications",
+    icon: FileCheck,
+    title: "Immatriculation",
+    description: "Assurance + carte grise + enregistrement",
   },
   {
     number: "04",
     icon: Key,
-    title: "Livraison & lancement",
-    description: "Votre garage est opérationnel en 45-60 jours, prêt à générer des revenus",
+    title: "Branding",
+    description: "Nom, identité, prix, bridge marketing",
+  },
+  {
+    number: "05",
+    icon: TrendingUp,
+    title: "Lancement",
+    description: "Mise sur Booking / Getaround / Airport desk",
+  },
+  {
+    number: "06",
+    icon: Gauge,
+    title: "Suivi & gestion",
+    description: "(Option) exploitation totale & reporting",
   },
 ];
 
@@ -41,7 +53,7 @@ export const HowItWorks = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 relative">
           {/* Connection line */}
           <div className="hidden lg:block absolute top-20 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-accent to-primary opacity-20" 
                style={{ width: 'calc(100% - 8rem)', left: '4rem' }} />
