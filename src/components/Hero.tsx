@@ -34,8 +34,12 @@ export const Hero = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                size="lg"
+                onClick={() => {
+                  const element = document.getElementById("contact");
+                  element?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Je veux investir
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -44,7 +48,11 @@ export const Hero = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-border/50 hover:bg-card font-semibold text-lg px-8 py-6 rounded-xl backdrop-blur-sm transition-all duration-300"
+                onClick={() => {
+                  const element = document.getElementById("contact");
+                  element?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="border-border/50 hover:bg-card font-semibold text-lg px-8 py-6 backdrop-blur-sm transition-all duration-300"
               >
                 <Phone className="mr-2 h-5 w-5" />
                 Demander un rendez-vous
