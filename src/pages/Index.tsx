@@ -7,10 +7,8 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { Realizations } from "@/components/Realizations";
 import { CTA } from "@/components/CTA";
 import { Footer } from "@/components/Footer";
-
 const Index = () => {
-  return (
-    <main className="min-h-screen">
+  return <main className="min-h-screen">
       <Navbar />
       <div id="accueil">
         <Hero />
@@ -33,9 +31,7 @@ const Index = () => {
       <div id="contact">
         <CTA />
       </div>
-      <Footer />
-    </main>
-  );
+      <Footer className="bg-black" />
+    </main>;
 };
-
 export default Index;
