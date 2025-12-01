@@ -18,37 +18,43 @@ export const Navbar = () => {
           <div className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection("accueil")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-colors font-medium"
             >
               Accueil
             </button>
             <button
+              onClick={() => scrollToSection("pourquoi-myrentpro")}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
+              Pourquoi MyRentPro
+            </button>
+            <button
               onClick={() => scrollToSection("pourquoi-maroc")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-colors font-medium"
             >
               Pourquoi le Maroc
             </button>
             <button
               onClick={() => scrollToSection("packs")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-colors font-medium"
             >
               Nos Packs
             </button>
             <button
               onClick={() => scrollToSection("processus")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-colors font-medium"
             >
               Comment ça marche
             </button>
             <button
               onClick={() => scrollToSection("realisations")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-colors font-medium"
             >
               Réalisations
             </button>
             <Button
               onClick={() => scrollToSection("contact")}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
             >
               Contact
             </Button>

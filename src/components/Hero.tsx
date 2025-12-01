@@ -10,9 +10,8 @@ export const Hero = () => {
         <img 
           src={heroBackground} 
           alt="Luxury cars fleet background" 
-          className="w-full h-full object-cover opacity-50"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 gradient-overlay" />
       </div>
       
       <div className="container relative z-10 mx-auto px-6 py-20">
