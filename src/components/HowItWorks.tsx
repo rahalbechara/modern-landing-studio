@@ -46,7 +46,7 @@ export const HowItWorks = () => {
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16 animate-in fade-in slide-in-from-bottom duration-700">
           <h2 className="font-display text-4xl md:text-5xl mb-6">
-            Comment ça <span className="gradient-hero bg-clip-text text-transparent">fonctionne</span> ?
+            Comment ça <span className="text-primary">fonctionne</span> ?
           </h2>
           <p className="text-xl text-muted-foreground">
             Un processus simple et rapide pour lancer votre activité de location
