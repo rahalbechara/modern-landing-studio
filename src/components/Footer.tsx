@@ -7,7 +7,7 @@ export const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="font-display text-2xl gradient-hero bg-clip-text text-transparent">
+            <h3 className="font-display text-2xl text-primary">
               MyRentPro
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
