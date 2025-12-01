@@ -58,7 +58,7 @@ export const CTA = () => {
                   </div>
                   <div>
                     <div className="font-semibold mb-1">Téléphone</div>
-                    <div className="text-white/80">+212 XXX XXX XXX</div>
+                    <div className="text-white/80">+212 6 53 87 85 33</div>
                   </div>
                 </div>
               </div>
