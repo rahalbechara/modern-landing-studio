@@ -1,9 +1,7 @@
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
-
 export const Footer = () => {
-  return (
-    <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-6 py-12">
+  return <footer className="bg-card border-t border-border">
+      <div className="container mx-auto px-6 py-12 bg-black">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
@@ -80,6 +78,5 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
