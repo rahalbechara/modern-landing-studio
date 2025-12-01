@@ -57,19 +57,19 @@ export const WhyMyRentPro = () => {
         <div className="bg-card border border-border rounded-2xl p-8 shadow-md">
           <div className="grid grid-cols-3 gap-6 text-center">
             <div className="border-r border-border last:border-r-0">
-              <div className="text-3xl md:text-4xl font-bold gradient-hero bg-clip-text text-transparent mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
                 100+
               </div>
               <div className="text-muted-foreground">voitures livrées</div>
             </div>
             <div className="border-r border-border last:border-r-0">
-              <div className="text-3xl md:text-4xl font-bold gradient-hero bg-clip-text text-transparent mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
                 90%
               </div>
               <div className="text-muted-foreground">satisfaction</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold gradient-hero bg-clip-text text-transparent mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
                 24/7
               </div>
               <div className="text-muted-foreground">assistance</div>
