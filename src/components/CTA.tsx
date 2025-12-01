@@ -1,10 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MapPin, Mail, Phone } from "lucide-react";
-
 export const CTA = () => {
-  return (
-    <section className="py-24 bg-gradient-hero text-white">
+  return <section className="py-24 bg-gradient-hero text-white">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
           {/* Form Section */}
@@ -17,30 +15,12 @@ export const CTA = () => {
             </p>
             
             <form className="space-y-4">
-              <Input 
-                placeholder="Nom"
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12"
-              />
-              <Input 
-                type="email"
-                placeholder="Email"
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12"
-              />
-              <Input 
-                type="tel"
-                placeholder="Téléphone"
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12"
-              />
-              <Input 
-                placeholder="Budget"
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12"
-              />
+              <Input placeholder="Nom" className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12" />
+              <Input type="email" placeholder="Email" className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12" />
+              <Input type="tel" placeholder="Téléphone" className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12" />
+              <Input placeholder="Budget" className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12" />
               
-              <Button 
-                type="submit"
-                size="lg" 
-                className="w-full bg-accent hover:bg-accent/90 text-white font-semibold text-lg py-6 rounded-xl"
-              >
+              <Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent/90 text-white font-semibold text-lg py-6 rounded-xl">
                 Recevoir l'offre
               </Button>
             </form>
@@ -68,7 +48,7 @@ export const CTA = () => {
                   </div>
                   <div>
                     <div className="font-semibold mb-1">Email</div>
-                    <div className="text-white/80">commercial@myrentpro.com</div>
+                    <div className="text-white/80">contact@monrentpro.com</div>
                   </div>
                 </div>
                 
@@ -86,6 +66,5 @@ export const CTA = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };

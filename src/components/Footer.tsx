@@ -6,8 +6,7 @@ export const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <h3 className="font-display text-2xl text-primary">
-              MyRentPro
-            </h3>
+          </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Votre partenaire de confiance pour investir dans la location de voitures au Maroc.
             </p>
@@ -60,7 +59,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
-                <span>contact@myrentpro.ma</span>
+                <span>contact@monrentpro.ma</span>
               </li>
             </ul>
           </div>
