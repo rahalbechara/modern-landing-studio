@@ -1,54 +1,41 @@
 import { Card } from "@/components/ui/card";
 import { TrendingUp, Users, MapPin, Trophy } from "lucide-react";
-
-const stats = [
-  {
-    icon: Users,
-    value: "+14M touristes par an",
-    explanation: "Marrakech + Casablanca = demande continue",
-    sublabel: "Hôtels, excursions, business, saison haute"
-  },
-  {
-    icon: TrendingUp,
-    value: "70% de taux de location moyen",
-    explanation: "Hôtels, excursions, business, saison haute",
-    sublabel: "Demande continue toute l'année"
-  },
-  {
-    icon: TrendingUp,
-    value: "Croissance +18%/an",
-    explanation: "Demande supérieure à l'offre",
-    sublabel: "Marché en pleine expansion"
-  },
-  {
-    icon: MapPin,
-    value: "Villes les plus rentables",
-    explanation: "Marrakech – Casablanca – Agadir – Rabat",
-    sublabel: "Taux d'occupation parmi les plus élevés"
-  }
-];
-
-const worldCupFeatures = [
-  {
-    icon: Users,
-    title: "Arrivées touristiques multipliées",
-    description: "Explosion de la demande en location de voitures",
-  },
-  {
-    icon: MapPin,
-    title: "Investissements infrastructurels",
-    description: "Nouvelles routes, hubs aéroportuaires, hôtels",
-  },
-  {
-    icon: TrendingUp,
-    title: "Exposition internationale",
-    description: "Hausse des flux d'affaires & expatriés",
-  },
-];
-
+const stats = [{
+  icon: Users,
+  value: "+14M touristes par an",
+  explanation: "Marrakech + Casablanca = demande continue",
+  sublabel: "Hôtels, excursions, business, saison haute"
+}, {
+  icon: TrendingUp,
+  value: "70% de taux de location moyen",
+  explanation: "Hôtels, excursions, business, saison haute",
+  sublabel: "Demande continue toute l'année"
+}, {
+  icon: TrendingUp,
+  value: "Croissance +18%/an",
+  explanation: "Demande supérieure à l'offre",
+  sublabel: "Marché en pleine expansion"
+}, {
+  icon: MapPin,
+  value: "Villes les plus rentables",
+  explanation: "Marrakech – Casablanca – Agadir – Rabat",
+  sublabel: "Taux d'occupation parmi les plus élevés"
+}];
+const worldCupFeatures = [{
+  icon: Users,
+  title: "Arrivées touristiques multipliées",
+  description: "Explosion de la demande en location de voitures"
+}, {
+  icon: MapPin,
+  title: "Investissements infrastructurels",
+  description: "Nouvelles routes, hubs aéroportuaires, hôtels"
+}, {
+  icon: TrendingUp,
+  title: "Exposition internationale",
+  description: "Hausse des flux d'affaires & expatriés"
+}];
 export const WhyMorocco = () => {
-  return (
-    <section className="py-24 bg-background">
+  return <section className="py-24 bg-background">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-16 animate-in fade-in slide-in-from-bottom duration-700">
@@ -74,12 +61,9 @@ export const WhyMorocco = () => {
 
         {/* Stats */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {stats.map((stat, index) => (
-            <Card 
-              key={index}
-              className="p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 animate-in fade-in slide-in-from-bottom duration-700"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
+          {stats.map((stat, index) => <Card key={index} style={{
+          animationDelay: `${index * 100}ms`
+        }} className="p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 animate-in fade-in slide-in-from-bottom duration-700 bg-gray-900">
               <div className="flex items-start gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg gradient-accent flex items-center justify-center flex-shrink-0">
                   <stat.icon className="h-5 w-5 text-white" />
@@ -88,8 +72,7 @@ export const WhyMorocco = () => {
               </div>
               <div className="text-muted-foreground mb-2">{stat.explanation}</div>
               <div className="text-sm text-muted-foreground/80">{stat.sublabel}</div>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
         {/* World Cup 2030 */}
@@ -110,17 +93,13 @@ export const WhyMorocco = () => {
           </p>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {worldCupFeatures.map((feature, index) => (
-              <div 
-                key={index}
-                className="bg-background/50 backdrop-blur-sm rounded-xl p-6 border border-border/30 animate-in fade-in slide-in-from-bottom duration-700"
-                style={{ animationDelay: `${(index + 3) * 100}ms` }}
-              >
+            {worldCupFeatures.map((feature, index) => <div key={index} className="bg-background/50 backdrop-blur-sm rounded-xl p-6 border border-border/30 animate-in fade-in slide-in-from-bottom duration-700" style={{
+            animationDelay: `${(index + 3) * 100}ms`
+          }}>
                 <feature.icon className="h-8 w-8 text-accent mb-4" />
                 <h4 className="font-bold text-lg mb-2">{feature.title}</h4>
                 <p className="text-sm text-muted-foreground">{feature.description}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
 
           <div className="mt-8 p-6 bg-background rounded-xl border-l-4 border-accent">
@@ -141,6 +120,5 @@ export const WhyMorocco = () => {
           </p>
         </Card>
       </div>
-    </section>
-  );
+    </section>;
 };
