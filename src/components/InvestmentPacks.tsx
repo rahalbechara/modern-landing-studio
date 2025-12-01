@@ -59,10 +59,18 @@ export const InvestmentPacks = () => {
               </div>
 
               <div className="flex flex-col gap-3">
-                <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
+                <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
+                onClick={() => {
+                  const element = document.getElementById("contact");
+                  element?.scrollIntoView({ behavior: "smooth" });
+                }}>
                   Je veux mon pack
                 </Button>
-                <Button size="lg" variant="outline" className="w-full font-semibold">
+                <Button size="lg" variant="outline" className="w-full font-semibold"                 
+                onClick={() => {
+                  const element = document.getElementById("contact");
+                  element?.scrollIntoView({ behavior: "smooth" });
+                }}>
                   Parler avec un conseiller
                 </Button>
               </div>
