@@ -31,7 +31,7 @@ export const InvestmentPacks = () => {
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16 animate-in fade-in slide-in-from-bottom duration-700">
           <h2 className="font-display text-4xl md:text-5xl mb-6">
-            Packs d'<span className="gradient-hero bg-clip-text text-transparent">investissement</span>
+            Packs d'<span className="text-primary">investissement</span>
           </h2>
           <p className="text-xl text-muted-foreground">
             6 étapes pour lancer votre activité de location
