@@ -111,7 +111,7 @@ export const WhyMorocco = () => {
         </div>
 
         {/* Market opportunity */}
-        <Card className="p-8 md:p-12 text-center shadow-lg">
+        <Card className="p-8 md:p-12 text-center shadow-lg bg-gray-950">
           <h3 className="font-display text-3xl mb-4">Un marché encore largement sous-exploité</h3>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Alors que l'Europe est saturée, le Maroc reste une terre d'expansion. 
