@@ -1,17 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
 import heroBackground from "@/assets/hero-background.png";
-
 export const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
+  return <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
       {/* Background car image */}
       <div className="absolute inset-0">
-        <img 
-          src={heroBackground} 
-          alt="Luxury cars fleet background" 
-          className="w-full h-full object-cover"
-        />
+        <img src={heroBackground} alt="Luxury cars fleet background" className="w-full h-full object-fill opacity-50" />
       </div>
       
       <div className="container relative z-10 mx-auto px-6 py-20">
@@ -33,27 +27,22 @@ export const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button 
-                size="lg"
-                onClick={() => {
-                  const element = document.getElementById("contact");
-                  element?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300"
-              >
+              <Button size="lg" onClick={() => {
+              const element = document.getElementById("contact");
+              element?.scrollIntoView({
+                behavior: "smooth"
+              });
+            }} className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300">
                 Je veux investir
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               
-              <Button 
-                size="lg" 
-                variant="outline"
-                onClick={() => {
-                  const element = document.getElementById("contact");
-                  element?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="border-border/50 hover:bg-card font-semibold text-lg px-8 py-6 backdrop-blur-sm transition-all duration-300"
-              >
+              <Button size="lg" variant="outline" onClick={() => {
+              const element = document.getElementById("contact");
+              element?.scrollIntoView({
+                behavior: "smooth"
+              });
+            }} className="border-border/50 hover:bg-card font-semibold text-lg px-8 py-6 backdrop-blur-sm transition-all duration-300">
                 <Phone className="mr-2 h-5 w-5" />
                 Demander un rendez-vous
               </Button>
@@ -77,6 +66,5 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
