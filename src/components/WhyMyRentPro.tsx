@@ -42,7 +42,7 @@ export const WhyMyRentPro = () => {
         </div>
 
         {/* Stats banner */}
-        <div className="bg-card border border-border rounded-2xl p-8 shadow-md">
+        <div className="border border-border rounded-2xl p-8 shadow-md bg-gray-950">
           <div className="grid grid-cols-3 gap-6 text-center">
             <div className="border-r border-border last:border-r-0">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
