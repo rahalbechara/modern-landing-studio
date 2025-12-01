@@ -56,7 +56,7 @@ export const InvestmentPacks = () => {
               <div className="grid grid-cols-2 gap-6 mb-6">
                 <div>
                   <div className="text-sm text-muted-foreground mb-1">Investissement</div>
-                  <div className="text-2xl font-bold gradient-hero bg-clip-text text-transparent">
+                  <div className="text-2xl font-bold text-primary">
                     {pack.investment}
                   </div>
                 </div>
