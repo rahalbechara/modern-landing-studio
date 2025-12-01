@@ -57,7 +57,7 @@ export const WhyMorocco = () => {
             Le Maroc est l'un des marchés les plus profitables pour la location auto
           </div>
           <h2 className="font-display text-4xl md:text-5xl mb-6">
-            Pourquoi investir au <span className="gradient-accent bg-clip-text text-transparent">Maroc</span> ?
+            Pourquoi investir au <span className="text-primary">Maroc</span> ?
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed mb-4">
             Le Maroc n'est pas seulement une destination touristique, c'est un marché en pleine 
