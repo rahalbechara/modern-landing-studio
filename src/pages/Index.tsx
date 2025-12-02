@@ -31,7 +31,7 @@ const Index = () => {
       <div id="contact">
         <CTA />
       </div>
-      <Footer className="bg-black" />
+      <Footer />
     </main>;
 };
 export default Index;
