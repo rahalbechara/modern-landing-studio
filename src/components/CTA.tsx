@@ -38,7 +38,9 @@ export const CTA = () => {
                   </div>
                   <div>
                     <div className="font-semibold mb-1">Adresse</div>
-                    <div className="text-white/80">Marrakech, Maroc</div>
+                    <div className="text-white/80">Allal lfassi
+
+Marrakech, Morocco</div>
                   </div>
                 </div>
                 
