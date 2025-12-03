@@ -70,7 +70,7 @@ Marrakech, Morocco</span>
         {/* Bottom bar */}
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-            <p>© 2024 MyRentPro. Tous droits réservés.</p>
+            <p>© 2025 MyRentPro. Tous droits réservés.</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-primary transition-colors">Mentions légales</a>
               <a href="#" className="hover:text-primary transition-colors">Confidentialité</a>
