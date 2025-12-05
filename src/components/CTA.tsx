@@ -1,8 +1,62 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MapPin, Mail, Phone } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
+
 export const CTA = () => {
-  return <section className="py-24 bg-gradient-hero text-white">
+  const { toast } = useToast();
+  const [isLoading, setIsLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    nom: "",
+    email: "",
+    telephone: "",
+    budget: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.nom.trim() || !formData.email.trim()) {
+      toast({
+        title: "Erreur",
+        description: "Veuillez remplir les champs obligatoires (Nom et Email)",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsLoading(true);
+    
+    const { error } = await supabase.from("rent_leads").insert({
+      nom: formData.nom.trim(),
+      email: formData.email.trim(),
+      telephone: formData.telephone.trim() || null,
+      budget: formData.budget.trim() || null,
+    });
+
+    setIsLoading(false);
+
+    if (error) {
+      toast({
+        title: "Erreur",
+        description: "Une erreur est survenue. Veuillez réessayer.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    toast({
+      title: "Succès",
+      description: "Votre demande a été envoyée avec succès!",
+    });
+
+    setFormData({ nom: "", email: "", telephone: "", budget: "" });
+  };
+
+  return (
+    <section className="py-24 bg-gradient-hero text-white">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
           {/* Form Section */}
@@ -14,14 +68,41 @@ export const CTA = () => {
               Investissez dans un garage rentable — nous livrons, vous encaissez.
             </p>
             
-            <form className="space-y-4">
-              <Input placeholder="Nom" className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12" />
-              <Input type="email" placeholder="Email" className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12" />
-              <Input type="tel" placeholder="Téléphone" className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12" />
-              <Input placeholder="Budget" className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12" />
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <Input 
+                placeholder="Nom *" 
+                value={formData.nom}
+                onChange={(e) => setFormData({ ...formData, nom: e.target.value })}
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12" 
+              />
+              <Input 
+                type="email" 
+                placeholder="Email *" 
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12" 
+              />
+              <Input 
+                type="tel" 
+                placeholder="Téléphone" 
+                value={formData.telephone}
+                onChange={(e) => setFormData({ ...formData, telephone: e.target.value })}
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12" 
+              />
+              <Input 
+                placeholder="Budget" 
+                value={formData.budget}
+                onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12" 
+              />
               
-              <Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent/90 text-white font-semibold text-lg py-6 rounded-xl">
-                Recevoir l'offre
+              <Button 
+                type="submit" 
+                size="lg" 
+                disabled={isLoading}
+                className="w-full bg-accent hover:bg-accent/90 text-white font-semibold text-lg py-6 rounded-xl"
+              >
+                {isLoading ? "Envoi en cours..." : "Recevoir l'offre"}
               </Button>
             </form>
           </div>
@@ -68,5 +149,6 @@ Marrakech, Morocco</div>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
