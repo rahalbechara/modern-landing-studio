@@ -60,7 +60,7 @@ Marrakech, Morocco</div>
                   </div>
                   <div>
                     <div className="font-semibold mb-1">Téléphone</div>
-                    <div className="text-white/80">+212 676 676 676</div>
+                    <div className="text-white/80">+212 786 251 167</div>
                   </div>
                 </div>
               </div>
