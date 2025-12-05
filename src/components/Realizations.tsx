@@ -7,6 +7,10 @@ import realization5 from "@/assets/realization-5.jpg";
 import realization6 from "@/assets/realization-6.jpg";
 import realization7 from "@/assets/realization-7.jpg";
 import realization8 from "@/assets/realization-8.jpg";
+import realization9 from "@/assets/realization-9.jpg";
+import realization10 from "@/assets/realization-10.jpg";
+import realization11 from "@/assets/realization-11.jpg";
+import realization12 from "@/assets/realization-12.jpg";
 
 const realizationImages = [
   realization1,
@@ -17,6 +21,10 @@ const realizationImages = [
   realization6,
   realization7,
   realization8,
+  realization9,
+  realization10,
+  realization11,
+  realization12,
 ];
 
 export const Realizations = () => {
