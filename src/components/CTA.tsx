@@ -4,10 +4,34 @@ import { Input } from "@/components/ui/input";
 import { MapPin, Mail, Phone } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { z } from "zod";
+
+// Validation schema with proper limits
+const leadSchema = z.object({
+  nom: z.string()
+    .trim()
+    .min(2, "Le nom doit contenir au moins 2 caractères")
+    .max(100, "Le nom ne peut pas dépasser 100 caractères"),
+  email: z.string()
+    .trim()
+    .email("Veuillez entrer une adresse email valide")
+    .max(255, "L'email ne peut pas dépasser 255 caractères"),
+  telephone: z.string()
+    .trim()
+    .max(20, "Le téléphone ne peut pas dépasser 20 caractères")
+    .optional()
+    .or(z.literal("")),
+  budget: z.string()
+    .trim()
+    .max(50, "Le budget ne peut pas dépasser 50 caractères")
+    .optional()
+    .or(z.literal("")),
+});
 
 export const CTA = () => {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
+  const [honeypot, setHoneypot] = useState(""); // Anti-spam honeypot field
   const [formData, setFormData] = useState({
     nom: "",
     email: "",
@@ -18,22 +42,37 @@ export const CTA = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.nom.trim() || !formData.email.trim()) {
+    // Honeypot check - if filled, it's likely a bot
+    if (honeypot) {
       toast({
-        title: "Erreur",
-        description: "Veuillez remplir les champs obligatoires (Nom et Email)",
+        title: "Succès",
+        description: "Votre demande a été envoyée avec succès!",
+      });
+      return;
+    }
+
+    // Validate input using zod schema
+    const validationResult = leadSchema.safeParse(formData);
+    
+    if (!validationResult.success) {
+      const firstError = validationResult.error.errors[0];
+      toast({
+        title: "Erreur de validation",
+        description: firstError.message,
         variant: "destructive",
       });
       return;
     }
 
+    const validatedData = validationResult.data;
+
     setIsLoading(true);
     
     const { error } = await supabase.from("rent_leads").insert({
-      nom: formData.nom.trim(),
-      email: formData.email.trim(),
-      telephone: formData.telephone.trim() || null,
-      budget: formData.budget.trim() || null,
+      nom: validatedData.nom,
+      email: validatedData.email,
+      telephone: validatedData.telephone || null,
+      budget: validatedData.budget || null,
     });
 
     setIsLoading(false);
@@ -69,31 +108,46 @@ export const CTA = () => {
             </p>
             
             <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Honeypot field - hidden from users, bots will fill it */}
+              <input
+                type="text"
+                name="website"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                style={{ position: 'absolute', left: '-9999px' }}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
               <Input 
                 placeholder="Nom *" 
                 value={formData.nom}
                 onChange={(e) => setFormData({ ...formData, nom: e.target.value })}
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12" 
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12"
+                maxLength={100}
               />
               <Input 
                 type="email" 
                 placeholder="Email *" 
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12" 
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12"
+                maxLength={255}
               />
               <Input 
                 type="tel" 
                 placeholder="Téléphone" 
                 value={formData.telephone}
                 onChange={(e) => setFormData({ ...formData, telephone: e.target.value })}
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12" 
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12"
+                maxLength={20}
               />
               <Input 
                 placeholder="Budget" 
                 value={formData.budget}
                 onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12" 
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm h-12"
+                maxLength={50}
               />
               
               <Button 
